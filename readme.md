@@ -1,6 +1,6 @@
 # Mojo/Nvim Devcontainer
 
-This is an effort to work with Mojo in a devcontainer without Vs Code leveraging [https://containers.dev](Devcontainer CLI), this particular set up is geared towards
+This is an effort to work with Mojo in a devcontainer without Vs Code leveraging (Devcontainer CLI)[https://containers.dev], this particular set up is geared towards
 usage with Neovim, you can customize it to fit your own needs.
 
 The major reason Dev Container is really needed here is because it proves a nice interface to mount local neovim configuration and state into the container - See .devcontainer/devcontainer.json.
@@ -53,3 +53,5 @@ cd .devcontainer
 docker build . -t mojo-standalone
 docker run -it mojo-standalone mojo
 ```
+
+Devcontainer makes using this thing for a serious project a better experience, I recommend you keep it.
