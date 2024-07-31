@@ -12,7 +12,7 @@ The major reason Dev Container is really needed here is because it proves a nice
 
 # Getting started.
 
-The Dockerfile in root folder Neovim and Modular. This needs to be built once and the image referenced inside .devcontainer/Dockerfile.
+The Dockerfile in root folder sets up Neovim and Modular. This needs to be built once and the image referenced inside .devcontainer/Dockerfile.
 
 ```sh
 docker build . -t modular-sdk
