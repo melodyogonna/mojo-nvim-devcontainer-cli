@@ -1,0 +1,32 @@
+{
+  "name": "Mojo",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.config/nvim",
+      "target": "/root/.config/nvim",
+      "consistency": "cached"
+    },
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.local/share/nvim",
+      "target": "/root/.local/share/nvim",
+      "consistency": "cached"
+    },
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.local/state/nvim",
+      "target": "/root/.local/state/nvim",
+      "consistency": "cached"
+    },
+    {
+      "type": "bind",
+      "source": "${localEnv:HOME}/.cache/nvim",
+      "target": "/root/.cache/nvim",
+      "consistency": "cached"
+    }
+  ]
+}
