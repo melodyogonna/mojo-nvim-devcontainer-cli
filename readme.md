@@ -59,7 +59,7 @@ make devcontainer
 Run mojo:
 
 ```sh
-devcontainer exec --workspace-folder . magic ru mojo
+devcontainer exec --workspace-folder . magic run mojo
 ```
 
 to start Neovim inside the container and open it simply do:
