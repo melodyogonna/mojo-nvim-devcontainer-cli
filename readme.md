@@ -29,7 +29,7 @@ To launch a Neovim instance inside the devcontainer workspace.
 
 ## Details
 
-The Dockerfile in root folder sets up Neovim and Magic. This needs to be built once and the image referenced inside `.devcontainer/Dockerfile`. The idea is that all subsequent projects would use the built image as a base
+The Dockerfile in root folder sets up Neovim and [Magic](https://docs.modular.com/magic/). This needs to be built once and the image referenced inside `.devcontainer/Dockerfile`. The idea is that all subsequent projects would use the built image as a base
 layer so we wouldn't need to go through the entire setup every time we want to start a new project.
 
 ```sh
