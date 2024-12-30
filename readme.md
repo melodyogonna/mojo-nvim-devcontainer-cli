@@ -12,10 +12,34 @@ The major reason Dev Container is really needed here is because it proves a nice
 
 # Getting started.
 
-The Dockerfile in root folder sets up Neovim and Modular. This needs to be built once and the image referenced inside .devcontainer/Dockerfile.
+You can either get started by using this repository as a template, cloning it, or just copying the files you want.
+For simplicity I'll assume you've cloned to repository. In this case, getting started is pretty easy:
 
 ```sh
-docker build . -t modular-sdk
+make setup
+```
+
+To configure Max SDK in docker and initialize devcontainer
+
+```
+make
+```
+
+To launch a Neovim instance inside the devcontainer workspace.
+
+## Details
+
+The Dockerfile in root folder sets up Neovim and Magic. This needs to be built once and the image referenced inside `.devcontainer/Dockerfile`. The idea is that all subsequent projects would use the built image as a base
+layer so we wouldn't need to go through the entire setup every time we want to start a new project.
+
+```sh
+make sdk
+```
+
+Or
+
+```sh
+docker build . -t max-sdk
 ```
 
 In my local machine I moved this Dockerfile to a new ~/modular directory, I recommend you do the same.
@@ -35,13 +59,19 @@ make devcontainer
 Run mojo:
 
 ```sh
-devcontainer exec --workspace-folder . mojo
+devcontainer exec --workspace-folder . magic ru mojo
 ```
 
 to start Neovim inside the container and open it simply do:
 
 ```sh
 make launch
+```
+
+alias
+
+```sh
+make
 ```
 
 ## I don't have Neovim and I don't care about mounting local filesystem
@@ -51,7 +81,7 @@ Then you probably don't need devcontainer. Remove every Neovim setup command in 
 ```sh
 cd .devcontainer
 docker build . -t mojo-standalone
-docker run -it mojo-standalone mojo
+docker run -it mojo-standalone magic shell
 ```
 
 Devcontainer makes using this thing for a serious project a better experience, I recommend you keep it.

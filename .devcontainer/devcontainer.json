@@ -3,7 +3,14 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "onCreateCommand": "magic init --format mojoproject",
+  "postStartCommand": "magic install",
   "mounts": [
+    {
+      "type": "volume",
+      "source": "${localWorkspaceFolderBasename}-magic",
+      "target": "${containerWorkspaceFolder}/.magic"
+    },
     {
       "type": "bind",
       "source": "${localEnv:HOME}/.config/nvim",

@@ -1,11 +1,15 @@
-app: docker-build
+app: launch
 
-docker-build:
-	docker build . -t mojo
+setup: sdk devcontainer
+
+sdk:
+	docker build . -t max-sdk
 
 devcontainer:
 	devcontainer up --workspace-folder .
 
 launch:
-	devcontainer exec --workspace-folder . nvim .
+	devcontainer exec --workspace-folder . magic run nvim .
 
+shell:
+	devcontainer exec --workspace-folder . magic shell
