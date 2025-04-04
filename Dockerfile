@@ -10,7 +10,7 @@ RUN apt-get update \
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz && rm -rf /opt/nvim && sudo tar -C /opt -xzf nvim-linux64.tar.gz 
 ENV PATH="$PATH:/opt/nvim-linux64/bin"
 
-RUN curl -ssL https://magic.modular.com/4ab55fbc-767e-4dcd-9020-8ba64f52794b | bash
+RUN curl -ssL https://magic.modular.com/564e6568-bb5b-438e-bfc3-13d858d065ab | bash
 ENV PATH="$PATH:/root/.modular/bin"
 
 # Change permissions to allow for Apptainer/Singularity containers
