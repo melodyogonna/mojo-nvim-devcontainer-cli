@@ -19,7 +19,7 @@ For simplicity I'll assume you've cloned to repository. In this case, getting st
 make setup
 ```
 
-This will install/configure Neovim and Pixi in the container.
+This will install/configure Neovim and Pixi in a devcontainer container.
 
 ```
 make
