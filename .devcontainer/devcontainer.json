@@ -3,8 +3,6 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "onCreateCommand": "magic init --format mojoproject",
-  "postStartCommand": "magic install",
   "mounts": [
     {
       "type": "volume",
