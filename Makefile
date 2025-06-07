@@ -1,15 +1,9 @@
-app: launch
+app: shell
 
-setup: sdk devcontainer
-
-sdk:
-	docker build . -t max-sdk
+setup: devcontainer
 
 devcontainer:
 	devcontainer up --workspace-folder .
 
-launch:
-	devcontainer exec --workspace-folder . magic run nvim .
-
-shell:
-	devcontainer exec --workspace-folder . magic shell
+shell: devcontainer
+	devcontainer exec --workspace-folder . bash
