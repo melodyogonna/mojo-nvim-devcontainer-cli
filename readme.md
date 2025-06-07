@@ -19,69 +19,10 @@ For simplicity I'll assume you've cloned to repository. In this case, getting st
 make setup
 ```
 
-To configure Max SDK in docker and initialize devcontainer
+This will install/configure Neovim and Pixi in the container.
 
 ```
 make
 ```
 
-To launch a Neovim instance inside the devcontainer workspace.
-
-## Details
-
-The Dockerfile in root folder sets up Neovim and [Magic](https://docs.modular.com/magic/). This needs to be built once and the image referenced inside `.devcontainer/Dockerfile`. The idea is that all subsequent projects would use the built image as a base
-layer so we wouldn't need to go through the entire setup every time we want to start a new project.
-
-```sh
-make sdk
-```
-
-Or
-
-```sh
-docker build . -t max-sdk
-```
-
-In my local machine I moved this Dockerfile to a new ~/modular directory, I recommend you do the same.
-
-You can start devcontainer:
-
-```sh
-devcontainer up --workspace-folder .
-```
-
-or (on Mac or Linux)
-
-```sh
-make devcontainer
-```
-
-Run mojo:
-
-```sh
-devcontainer exec --workspace-folder . magic run mojo
-```
-
-to start Neovim inside the container and open it simply do:
-
-```sh
-make launch
-```
-
-alias
-
-```sh
-make
-```
-
-## I don't have Neovim and I don't care about mounting local filesystem
-
-Then you probably don't need devcontainer. Remove every Neovim setup command in Dockerfile. You can then build directly build and run .devcontainer/Dockerfile (after you've built the sdk dockerfile of course.)
-
-```sh
-cd .devcontainer
-docker build . -t mojo-standalone
-docker run -it mojo-standalone magic shell
-```
-
-Devcontainer makes using this thing for a serious project a better experience, I recommend you keep it.
+To launch a bash shell in the container. You should confirm that Neovim and Pixi works. You can then setup your project inside the container: see [Modular Quickstart](https://docs.modular.com/max/get-started/)
